@@ -4,18 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PromoTekstil — Kurumsal Promosyon Ürünleri | Üreticiden Direkt</title>
-
 <meta name="description" content="16 yıllık tekstil üreticisinden kurumsal promosyon ürünleri. Tişört, termos, kalem ve daha fazlası. Toplu siparişlerde üretici fiyatı. Ücretsiz teklif alın.">
 <meta name="keywords" content="kurumsal promosyon ürünleri, toplu tişört baskı, logolu promosyon, kurumsal hediye, tekstil promosyon, toplu kalem siparişi">
-
 <meta property="og:title" content="PromoTekstil — Kurumsal Promosyon Ürünleri">
 <meta property="og:description" content="16 yıllık tekstil üreticisinden kurumsal promosyon ürünleri. Üreticiden direkt fiyat.">
 <meta property="og:type" content="website">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
-
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Inter',sans-serif;color:#1A1A2E;background:#fff}
@@ -26,41 +22,174 @@ nav{background:#1B2D4F;padding:0 5%;display:flex;align-items:center;justify-cont
 .logo{font-family:'Montserrat',sans-serif;font-weight:800;font-size:20px;color:#fff;letter-spacing:-0.5px;text-decoration:none}
 .logo span{color:#E8610A}
 .nav-links{display:flex;gap:28px;list-style:none}
-.nav-links a{color:rgba(255,255,255,0.82);text-decoration:none;font-size:14px;font-weight:500}
+.nav-links a{color:rgba(255,255,255,0.82);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s}
+.nav-links a:hover{color:#fff}
 .nav-right{display:flex;align-items:center;gap:20px}
-.nav-phone{color:#fff;font-size:14px;text-decoration:none}
-.nav-cta{background:#E8610A;color:#fff;border:none;padding:10px 22px;border-radius:6px;cursor:pointer}
+.nav-phone{color:#fff;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;text-decoration:none}
+.nav-phone:hover{color:#E8610A}
+.nav-cta{background:#E8610A;color:#fff;border:none;padding:10px 22px;border-radius:6px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:14px;cursor:pointer;transition:background 0.2s}
+.nav-cta:hover{background:#cf5208}
 
 /* HERO */
-.hero{background:linear-gradient(135deg,#1B2D4F 0%,#243d6b 100%);padding:80px 5%;display:flex;gap:60px;min-height:520px}
-.hero-text{flex:1}
-.hero h1{font-size:44px;color:#fff}
-.hero p{color:rgba(255,255,255,0.75);margin-top:15px}
-.btn-primary{background:#E8610A;color:#fff;border:none;padding:14px 30px;border-radius:7px;cursor:pointer}
-.btn-outline{background:transparent;color:#fff;border:1px solid #fff;padding:14px 28px;border-radius:7px}
+.hero{background:linear-gradient(135deg,#1B2D4F 0%,#243d6b 100%);padding:80px 5% 90px;display:flex;align-items:center;gap:60px;min-height:520px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;right:-80px;top:-80px;width:500px;height:500px;border-radius:50%;background:rgba(232,97,10,0.07);pointer-events:none}
+.hero-text{flex:1;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(232,97,10,0.18);border:1px solid rgba(232,97,10,0.4);color:#ff8c42;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;font-family:'Montserrat',sans-serif;letter-spacing:0.5px;margin-bottom:24px}
+.hero h1{font-size:44px;font-weight:800;color:#fff;line-height:1.15;margin-bottom:20px}
+.hero h1 em{color:#E8610A;font-style:normal}
+.hero p{font-size:17px;color:rgba(255,255,255,0.75);line-height:1.7;margin-bottom:36px;max-width:500px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-primary{background:#E8610A;color:#fff;border:none;padding:14px 30px;border-radius:7px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;cursor:pointer;transition:all 0.2s}
+.btn-primary:hover{background:#cf5208;transform:translateY(-1px)}
+.btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.4);padding:14px 28px;border-radius:7px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:15px;cursor:pointer;transition:all 0.2s}
+.btn-outline:hover{border-color:#fff;background:rgba(255,255,255,0.08)}
+.hero-visual{flex:0 0 380px;z-index:1}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.stat-card{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);border-radius:12px;padding:20px 18px}
+.stat-card .num{font-family:'Montserrat',sans-serif;font-weight:800;font-size:32px;color:#fff;line-height:1}
+.stat-card .lbl{font-size:13px;color:rgba(255,255,255,0.6);margin-top:6px}
+.stat-card .accent{color:#E8610A}
+
+/* TRUST BAR */
+.trust-bar{background:#F7F8FA;border-bottom:1px solid #e8e8e8;padding:18px 5%}
+.trust-items{display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:500;color:#444}
+.trust-item i{color:#E8610A;font-size:20px}
+
+/* SECTIONS */
+section{padding:80px 5%}
+.section-label{font-size:12px;font-weight:700;letter-spacing:1.5px;color:#E8610A;text-transform:uppercase;font-family:'Montserrat',sans-serif;margin-bottom:12px}
+.section-title{font-size:34px;font-weight:800;color:#1B2D4F;margin-bottom:16px;line-height:1.2}
+.section-sub{font-size:16px;color:#666;max-width:560px;line-height:1.7}
+.section-header{margin-bottom:52px}
+
+/* CATEGORIES */
+.cats-bg{background:#fff}
+.cats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.cat-card{border-radius:14px;overflow:hidden;border:1px solid #e8e8e8;transition:all 0.3s;cursor:pointer;background:#fff}
+.cat-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(27,45,79,0.12);border-color:#1B2D4F}
+.cat-img{height:200px;display:flex;align-items:center;justify-content:center;font-size:64px}
+.cat-img.tekstil{background:#EDF2FF}
+.cat-img.promo{background:#FFF3ED}
+.cat-img.ozel{background:#EDFBF4}
+.cat-body{padding:22px}
+.cat-body h3{font-size:18px;font-weight:700;color:#1B2D4F;margin-bottom:8px}
+.cat-body p{font-size:14px;color:#666;line-height:1.6;margin-bottom:16px}
+.cat-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.tag{background:#F0F4FF;color:#1B2D4F;font-size:11px;font-weight:600;padding:4px 10px;border-radius:20px}
+.cat-link{color:#E8610A;font-size:14px;font-weight:600;font-family:'Montserrat',sans-serif;display:inline-flex;align-items:center;gap:6px;text-decoration:none;border:none;background:none;cursor:pointer}
+.cat-link:hover{text-decoration:underline}
+
+/* WHY US */
+.why-bg{background:#1B2D4F}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.why-card{padding:32px 28px;border-radius:14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);transition:background 0.2s}
+.why-card:hover{background:rgba(255,255,255,0.09)}
+.why-icon{width:52px;height:52px;background:rgba(232,97,10,0.2);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.why-icon i{color:#E8610A;font-size:26px}
+.why-card h3{font-size:18px;font-weight:700;color:#fff;margin-bottom:10px}
+.why-card p{font-size:14px;color:rgba(255,255,255,0.62);line-height:1.7}
+
+/* HOW */
+.how-bg{background:#F7F8FA}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.steps::before{content:'';position:absolute;top:28px;left:12.5%;right:12.5%;height:2px;background:repeating-linear-gradient(90deg,#E8610A 0,#E8610A 8px,transparent 8px,transparent 16px)}
+.step{text-align:center;padding:0 16px}
+.step-num{width:56px;height:56px;background:#E8610A;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-weight:800;font-size:20px;color:#fff;margin:0 auto 20px;position:relative;z-index:1}
+.step h4{font-size:15px;font-weight:700;color:#1B2D4F;margin-bottom:8px}
+.step p{font-size:13px;color:#777;line-height:1.6}
 
 /* FORM */
-.form-bg{background:#1B2D4F;padding:80px 5%}
-.teklif-form{background:rgba(255,255,255,0.07);padding:36px;border-radius:16px}
+.form-bg{background:#1B2D4F}
+.form-wrap{max-width:760px;margin:0 auto;text-align:center}
+.teklif-form{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);border-radius:16px;padding:36px;text-align:left}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.form-grid input,.form-grid select,.teklif-form textarea{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:8px;padding:12px 16px;font-size:14px;color:#fff;font-family:'Inter',sans-serif;width:100%;transition:border 0.2s}
+.form-grid input::placeholder,.teklif-form textarea::placeholder{color:rgba(255,255,255,0.45)}
+.form-grid input:focus,.form-grid select:focus,.teklif-form textarea:focus{outline:none;border-color:#E8610A}
+.form-grid select{color:rgba(255,255,255,0.7)}
+.form-grid select option{color:#1A1A2E;background:#fff}
+.teklif-form textarea{width:100%;min-height:100px;resize:vertical;margin-bottom:20px}
+.submit-btn{background:#E8610A;color:#fff;border:none;padding:15px 48px;border-radius:8px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;cursor:pointer;transition:all 0.2s;width:100%}
+.submit-btn:hover{background:#cf5208;transform:translateY(-1px)}
+.form-note{margin-top:14px;font-size:12px;color:rgba(255,255,255,0.45);display:flex;align-items:center;justify-content:center;gap:6px}
 
-/* GRID */
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-input,select,textarea{
-width:100%;padding:12px;border-radius:8px;
-border:1px solid rgba(255,255,255,0.2);
-background:rgba(255,255,255,0.1);color:#fff
+/* FOOTER */
+footer{background:#111827;padding:60px 5% 30px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+.footer-brand p{font-size:13px;color:#9CA3AF;line-height:1.7;max-width:280px;margin-top:14px}
+.footer-col h5{font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;color:#fff;margin-bottom:18px}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:10px}
+.footer-col a{font-size:13px;color:#9CA3AF;text-decoration:none;transition:color 0.2s}
+.footer-col a:hover{color:#E8610A}
+.footer-bottom{border-top:1px solid #1F2937;padding-top:24px;display:flex;justify-content:space-between;align-items:center}
+.footer-bottom p{font-size:12px;color:#6B7280}
+.footer-social{display:flex;gap:12px}
+.social-btn{width:36px;height:36px;border-radius:8px;background:#1F2937;display:flex;align-items:center;justify-content:center;color:#9CA3AF;font-size:16px;transition:all 0.2s;text-decoration:none}
+.social-btn:hover{background:#E8610A;color:#fff}
+
+/* WHATSAPP */
+.wa-btn{position:fixed;bottom:28px;right:28px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,0.4);cursor:pointer;z-index:999;transition:transform 0.2s;text-decoration:none}
+.wa-btn:hover{transform:scale(1.08)}
+.wa-btn i{color:#fff;font-size:28px}
+
+/* KATALOG MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:1000;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.open{display:flex}
+.modal-box{background:#fff;border-radius:16px;width:100%;max-width:720px;overflow:hidden;max-height:90vh;display:flex;flex-direction:column}
+.modal-head{background:#1B2D4F;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.modal-head h3{font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;color:#fff;margin:0}
+.modal-close{background:rgba(255,255,255,0.12);border:none;color:#fff;width:34px;height:34px;border-radius:7px;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center}
+.modal-close:hover{background:rgba(255,255,255,0.22)}
+.modal-tabs{display:flex;border-bottom:1px solid #e8e8e8;padding:0 24px;background:#f7f8fa;flex-shrink:0}
+.modal-tab{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;padding:13px 18px;border:none;background:transparent;cursor:pointer;color:#888;border-bottom:2.5px solid transparent;margin-bottom:-1px;transition:all 0.2s}
+.modal-tab.active{color:#E8610A;border-bottom-color:#E8610A}
+.modal-body{padding:24px;overflow-y:auto;flex:1}
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.prod-card{border:1px solid #e8e8e8;border-radius:10px;overflow:hidden;transition:all 0.2s;background:#fff}
+.prod-card:hover{border-color:#E8610A;transform:translateY(-2px);box-shadow:0 6px 20px rgba(232,97,10,0.1)}
+.prod-thumb{height:110px;display:flex;align-items:center;justify-content:center;font-size:42px}
+.pt-blue{background:#EDF2FF}
+.pt-orange{background:#FFF3ED}
+.pt-green{background:#EDFBF4}
+.pt-purple{background:#F3EFFF}
+.pt-yellow{background:#FFFAED}
+.pt-red{background:#FFF0F0}
+.prod-info{padding:10px 12px}
+.prod-name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;color:#1B2D4F;margin-bottom:4px}
+.prod-min{font-size:11px;color:#888}
+.prod-badge{display:inline-block;background:#FFF3ED;color:#b84c00;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;margin-top:5px;font-family:'Montserrat',sans-serif}
+.prod-btn{width:100%;margin-top:8px;background:transparent;border:1px solid #E8610A;color:#E8610A;font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;padding:7px;border-radius:6px;cursor:pointer;transition:all 0.2s}
+.prod-btn:hover{background:#E8610A;color:#fff}
+.modal-foot{padding:14px 24px;border-top:1px solid #e8e8e8;background:#f7f8fa;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.modal-foot span{font-size:12px;color:#888;display:flex;align-items:center;gap:5px}
+.modal-foot-btn{background:#E8610A;color:#fff;border:none;padding:10px 22px;border-radius:7px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;cursor:pointer}
+.modal-foot-btn:hover{background:#cf5208}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero{flex-direction:column;padding:60px 5%}
+  .hero-visual{flex:none;width:100%}
+  .cats-grid,.why-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr;gap:40px}
+  .steps::before{display:none}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+  .form-grid{grid-template-columns:1fr}
+  .trust-items{gap:20px}
+  .prod-grid{grid-template-columns:repeat(2,1fr)}
 }
-
-.submit-btn{
-width:100%;margin-top:15px;
-background:#E8610A;color:#fff;
-padding:15px;border:none;border-radius:8px;
-cursor:pointer
+@media(max-width:600px){
+  .hero h1{font-size:30px}
+  .section-title{font-size:26px}
+  .footer-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:16px;text-align:center}
+  .prod-grid{grid-template-columns:repeat(2,1fr)}
 }
-
 </style>
 </head>
-
 <body>
 
 <!-- NAV -->
@@ -72,7 +201,9 @@ cursor:pointer
     <li><a href="#teklif">İletişim</a></li>
   </ul>
   <div class="nav-right">
-    <a href="tel:02120000000" class="nav-phone">0212 000 00 00</a>
+    <a href="tel:02120000000" class="nav-phone">
+      <i class="ti ti-phone" aria-hidden="true"></i> 0212 000 00 00
+    </a>
     <button class="nav-cta" onclick="document.getElementById('teklif').scrollIntoView({behavior:'smooth'})">Teklif Al</button>
   </div>
 </nav>
@@ -80,52 +211,487 @@ cursor:pointer
 <!-- HERO -->
 <section class="hero">
   <div class="hero-text">
-    <h1>Kurumsal Promosyonda Üretici Avantajı</h1>
-    <p>Fabrikadan direkt promosyon ürünleri</p>
-    <button class="btn-primary" onclick="document.getElementById('teklif').scrollIntoView({behavior:'smooth'})">Teklif Al</button>
-    <button class="btn-outline">Katalog</button>
+    <div class="hero-badge">
+      <i class="ti ti-building-factory-2" aria-hidden="true"></i> 16 YILLIK ÜRETİCİ
+    </div>
+    <h1>Kurumsal Promosyonda<br><em>Üretici Avantajı</em></h1>
+    <p>Tekstil ürünlerini kendi fabrikamızda üretiyoruz. Kalemden termosa, tişörtten çantaya — firmanızın logosu her ürünle tanıtılıyor. Aracısız, komisyonsuz.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="document.getElementById('teklif').scrollIntoView({behavior:'smooth'})">Ücretsiz Teklif İste</button>
+      <button class="btn-outline" onclick="openKatalog()">Ürün Kataloğu</button>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-stats">
+      <div class="stat-card">
+        <div class="num">16<span class="accent">+</span></div>
+        <div class="lbl">Yıl Üretim Deneyimi</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">500<span class="accent">+</span></div>
+        <div class="lbl">Referans Firma</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">%40</div>
+        <div class="lbl">Daha Uygun Fiyat</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">7<span class="accent"> gün</span></div>
+        <div class="lbl">Stok Ürün Teslimi</div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- FORM -->
-<section class="form-bg" id="teklif">
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-items">
+    <div class="trust-item"><i class="ti ti-building-factory-2" aria-hidden="true"></i> Doğrudan Üretici</div>
+    <div class="trust-item"><i class="ti ti-certificate" aria-hidden="true"></i> ISO 9001 Sertifikalı</div>
+    <div class="trust-item"><i class="ti ti-truck-delivery" aria-hidden="true"></i> Türkiye Geneli Teslimat</div>
+    <div class="trust-item"><i class="ti ti-palette" aria-hidden="true"></i> Özel Logo Baskı</div>
+    <div class="trust-item"><i class="ti ti-shield-check" aria-hidden="true"></i> Kalite Garantisi</div>
+  </div>
+</div>
 
-  <h2 style="color:#fff;text-align:center;margin-bottom:20px">
-    Ücretsiz Teklif Al
-  </h2>
-
-  <!-- 🔥 ÇALIŞAN FORM -->
-  <form class="teklif-form"
-        action="https://formsubmit.co/damla.irak@outlook.com"
-        method="POST">
-
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_subject" value="Yeni Teklif Talebi">
-
-    <div class="form-grid">
-      <input type="text" name="name" placeholder="Ad Soyad" required>
-      <input type="text" name="company" placeholder="Firma">
-      <input type="tel" name="phone" placeholder="Telefon" required>
-      <input type="email" name="email" placeholder="E-posta" required>
-
-      <select name="category">
-        <option>Tekstil</option>
-        <option>Promosyon</option>
-        <option>Özel Tasarım</option>
-      </select>
-
-      <input type="number" name="quantity" placeholder="Adet">
+<!-- KATEGORİLER -->
+<section class="cats-bg" id="urunler">
+  <div class="section-header">
+    <div class="section-label">Ürün Kategorileri</div>
+    <div class="section-title">İhtiyacınız Ne Olursa Olsun</div>
+    <div class="section-sub">Tekstilden klasik promosyon ürünlerine, her şeyi tek çatı altında tedarik edin.</div>
+  </div>
+  <div class="cats-grid">
+    <div class="cat-card">
+      <div class="cat-img tekstil">👕</div>
+      <div class="cat-body">
+        <h3>Tekstil Ürünleri</h3>
+        <p>Kendi fabrikamızda üretilen, logo baskılı kurumsal giysiler. Piyasa fiyatının çok altında.</p>
+        <div class="cat-tags">
+          <span class="tag">Tişört</span><span class="tag">Polo Yaka</span><span class="tag">Sweatshirt</span>
+          <span class="tag">İş Gömleği</span><span class="tag">Ceket</span><span class="tag">Çanta</span>
+        </div>
+        <button class="cat-link" onclick="openKatalog('tekstil')">Ürünleri İncele <i class="ti ti-arrow-right" aria-hidden="true"></i></button>
+      </div>
     </div>
-
-    <textarea name="message" placeholder="Not"></textarea>
-
-    <button type="submit" class="submit-btn">
-      Gönder
-    </button>
-
-  </form>
-
+    <div class="cat-card">
+      <div class="cat-img promo">🖊️</div>
+      <div class="cat-body">
+        <h3>Promosyon Ürünleri</h3>
+        <p>Kalemden termosa, defterden anahtarlığa — markanızı her an görünür kılın.</p>
+        <div class="cat-tags">
+          <span class="tag">Kalem</span><span class="tag">Termos</span><span class="tag">Defter</span>
+          <span class="tag">Powerbank</span><span class="tag">USB Bellek</span><span class="tag">Şapka</span>
+        </div>
+        <button class="cat-link" onclick="openKatalog('promosyon')">Ürünleri İncele <i class="ti ti-arrow-right" aria-hidden="true"></i></button>
+      </div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-img ozel">🎨</div>
+      <div class="cat-body">
+        <h3>Özel Tasarım & Baskı</h3>
+        <p>Tasarımınızı bize gönderin, biz hayata geçirelim. Sıfırdan üretim imkânı.</p>
+        <div class="cat-tags">
+          <span class="tag">Logo Baskı</span><span class="tag">Serigrafi</span><span class="tag">Nakış</span>
+          <span class="tag">Dijital Baskı</span><span class="tag">Lazer</span>
+        </div>
+        <button class="cat-link" onclick="openKatalog('ozel')">Ürünleri İncele <i class="ti ti-arrow-right" aria-hidden="true"></i></button>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- NEDEN BİZ -->
+<section class="why-bg" id="neden-biz">
+  <div class="section-header">
+    <div class="section-label" style="color:#ff8c42">Neden Biz?</div>
+    <div class="section-title" style="color:#fff">Rakiplerimizden Farkımız</div>
+    <div class="section-sub" style="color:rgba(255,255,255,0.6)">16 yıllık üretim deneyimini promosyon dünyasına taşıyoruz.</div>
+  </div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon"><i class="ti ti-building-factory-2" aria-hidden="true"></i></div>
+      <h3>Üreticiyiz, Aracı Değil</h3>
+      <p>Tekstil ürünleri kendi tesisimizde üretilir. Aradaki komisyoncu payı tamamen size kalır.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon"><i class="ti ti-coin" aria-hidden="true"></i></div>
+      <h3>Piyasanın En Uygun Fiyatı</h3>
+      <p>Rakip firmalara kıyasla tekstilde ortalama %30–40 daha düşük fiyat sunabiliyoruz.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon"><i class="ti ti-package" aria-hidden="true"></i></div>
+      <h3>Tek Tedarikçi, Tüm İhtiyaçlar</h3>
+      <p>Tekstilden kaleme, termosa kadar her ürünü tek sipariş ile temin edebilirsiniz.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon"><i class="ti ti-truck-delivery" aria-hidden="true"></i></div>
+      <h3>Hızlı Teslimat</h3>
+      <p>Stok ürünlerde 7 iş günü, özel üretimde 15 iş günü garanti teslimat süresi.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon"><i class="ti ti-palette" aria-hidden="true"></i></div>
+      <h3>Ücretsiz Tasarım Desteği</h3>
+      <p>Grafik ekibimiz logonuzu ürün üzerinde nasıl görüneceğini ücretsiz hazırlar.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon"><i class="ti ti-shield-check" aria-hidden="true"></i></div>
+      <h3>%100 Kalite Güvencesi</h3>
+      <p>Tüm üretimler kalite kontrolden geçer. Beğenmediğiniz ürünü iade alıyoruz.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NASIL ÇALIŞIYORUZ -->
+<section class="how-bg">
+  <div class="section-header" style="text-align:center">
+    <div class="section-label" style="text-align:center">Nasıl Çalışıyoruz?</div>
+    <div class="section-title" style="text-align:center">Siparişten Teslimata 4 Adım</div>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h4>Teklif Alın</h4>
+      <p>Formu doldurun veya bizi arayın. 4 saat içinde size özel fiyat teklifi iletiyoruz.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h4>Tasarım Onayı</h4>
+      <p>Logo ve tasarımınızı gönderin, dijital mockup ile onaylayın.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h4>Üretim</h4>
+      <p>Onayın ardından üretim başlar. Süreci anlık takip edebilirsiniz.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h4>Teslimat</h4>
+      <p>Kapınıza kadar kargo veya ofisimizden teslim alım seçeneği.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TEKLİF FORMU -->
+<section class="form-bg" id="teklif">
+  <div class="form-wrap">
+    <div class="section-label" style="text-align:center;color:#ff8c42">Hızlı Teklif</div>
+    <div class="section-title" style="color:#fff;text-align:center">Ücretsiz Fiyat Teklifi Alın</div>
+    <p style="color:rgba(255,255,255,0.65);text-align:center;font-size:16px;line-height:1.7;margin:0 auto 40px;max-width:500px">
+      4 saat içinde size özel fiyat listemizi iletiyoruz.
+    </p>
+   <form class="teklif-form" action="https://formsubmit.co/damla.irak@outlook.com" method="POST">
+      <div class="form-grid">
+        <input type="text" placeholder="Adınız Soyadınız" name="name">
+        <input type="text" placeholder="Firma Adı" name="company">
+        <input type="tel" placeholder="Telefon Numarası" name="phone">
+        <input type="email" placeholder="E-posta Adresi" name="email">
+        <select name="category">
+          <option value="" disabled selected>Ürün Kategorisi</option>
+          <option value="tekstil">Tekstil Ürünleri</option>
+          <option value="promosyon">Promosyon Ürünleri</option>
+          <option value="ozel">Özel Tasarım</option>
+          <option value="karma">Karma Sipariş</option>
+        </select>
+        <input type="number" placeholder="Tahmini Adet" name="quantity" min="1">
+     
+    <input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="Yeni Teklif Formu">
+<input type="hidden" name="_template" value="table">
+      <textarea placeholder="Notunuz veya özel istekleriniz..." name="message"></textarea>
+     <button type="submit" class="submit-btn">
+        Ücretsiz Teklif İste <i class="ti ti-send" aria-hidden="true"></i>
+      </button>
+        </form>
+      <div class="form-note">
+        <i class="ti ti-lock" style="font-size:14px" aria-hidden="true"></i>
+        Bilgileriniz güvende. Spam göndermiyoruz.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="logo">Promo<span>Tekstil</span></a>
+      <p>16 yıllık tekstil üretim deneyimiyle kurumsal promosyon dünyasında güvenilir çözüm ortağınız.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Ürünler</h5>
+      <ul>
+        <li><a href="#" onclick="openKatalog('tekstil');return false">Tekstil Ürünleri</a></li>
+        <li><a href="#" onclick="openKatalog('promosyon');return false">Promosyon Ürünleri</a></li>
+        <li><a href="#" onclick="openKatalog('ozel');return false">Özel Tasarım</a></li>
+        <li><a href="#teklif">Toplu Sipariş</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Kurumsal</h5>
+      <ul>
+        <li><a href="#neden-biz">Hakkımızda</a></li>
+        <li><a href="#teklif">İletişim</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>İletişim</h5>
+      <ul>
+        <li><a href="tel:02120000000">0212 000 00 00</a></li>
+        <li><a href="mailto:info@promotekstil.com">info@promotekstil.com</a></li>
+        <li><a href="#">İstanbul, Türkiye</a></li>
+        <li><a href="#teklif">Fabrika Ziyareti</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 PromoTekstil. Tüm hakları saklıdır.</p>
+    <div class="footer-social">
+      <a href="#" class="social-btn" aria-label="Instagram"><i class="ti ti-brand-instagram" aria-hidden="true"></i></a>
+      <a href="#" class="social-btn" aria-label="LinkedIn"><i class="ti ti-brand-linkedin" aria-hidden="true"></i></a>
+      <a href="#" class="social-btn" aria-label="Twitter"><i class="ti ti-brand-twitter" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/902120000000" class="wa-btn" target="_blank" rel="noopener" aria-label="WhatsApp ile iletişim">
+  <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
+</a>
+
+<!-- KATALOG MODAL -->
+<div class="modal-overlay" id="katalogModal" onclick="if(event.target===this)closeKatalog()">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3><i class="ti ti-layout-grid" style="margin-right:8px;vertical-align:-2px" aria-hidden="true"></i>Ürün Kataloğu</h3>
+      <button class="modal-close" onclick="closeKatalog()" aria-label="Kapat">
+        <i class="ti ti-x" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div class="modal-tabs">
+      <button class="modal-tab active" id="tab-btn-tekstil" onclick="switchTab('tekstil')">👕 Tekstil</button>
+      <button class="modal-tab" id="tab-btn-promosyon" onclick="switchTab('promosyon')">🖊️ Promosyon</button>
+      <button class="modal-tab" id="tab-btn-ozel" onclick="switchTab('ozel')">🎨 Özel Baskı</button>
+    </div>
+    <div class="modal-body">
+
+      <!-- TEKSTİL -->
+      <div id="tab-tekstil" class="prod-grid">
+        <div class="prod-card">
+          <div class="prod-thumb pt-blue">👕</div>
+          <div class="prod-info">
+            <div class="prod-name">Bisiklet Yaka Tişört</div>
+            <div class="prod-min">Min. 50 adet</div>
+            <div class="prod-badge">Üretici Fiyatı</div>
+            <button class="prod-btn" onclick="teklifAl('Bisiklet Yaka Tişört')">Teklif Al</button>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-thumb pt-orange">👔</div>
+          <div class="prod-info">
+            <div class="prod-name">Polo Yaka Tişört</div>
+            <div class="prod-min">Min. 30 adet</div>
+            <div class="prod-badge">Üretici Fiyatı</div>
+            <button class="prod-btn" onclick="teklifAl('Polo Yaka Tişört')">Teklif Al</button>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-thumb pt-green">🧥</div>
+          <div class="prod-info">
+            <div class="prod-name">Sweatshirt</div>
+            <div class="prod-min">Min. 30 adet</div>
+            <div class="prod-badge">Üretici Fiyatı</div>
+            <button class="prod-btn" onclick="teklifAl('Sweatshirt')">Teklif Al</button>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-thumb pt-purple">👗</div>
+          <div class="prod-info">
+            <div class="prod-name">İş Gömleği</div>
+            <div class="prod-min">Min. 20 adet</div>
+            <div class="prod-badge">Üretici Fiyatı</div>
+            <button class="prod-btn" onclick="teklifAl('İş Gömleği')">Teklif Al</button>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-thumb pt-yellow">🧢</div>
+          <div class="prod-info">
+            <div class="prod-name">Şapka / Kep</div>
+            <div class="prod-min">Min. 50 adet</div>
+            <div class="prod-badge">Üretici Fiyatı</div>
+            <button class="prod-btn" onclick="teklifAl('Şapka / Kep')">Teklif Al</button>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-thumb pt-blue">👜</div>
+          <div class="prod-info">
+            <div class="prod-name">Bez Çanta</div>
+            <div class="prod-min">Min. 100 adet</div>
+            <div class="prod-badge">Üretici Fiyatı</div>
+            <button class="prod-btn" onclick="teklifAl('Bez Çanta')">Teklif Al</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROMOSYON -->
+      <div id="tab-promosyon" class="prod-grid" style="display:none">
+        <div class="prod-card">
+          <div class="prod-thumb pt-orange">🖊️</div>
+          <div class="prod-info">
+            <div class="prod-name">Metal Kalem</div>
+            <div class="prod-min">Min. 100 adet</div>
+            <div class="prod-badge">Toplu Fiyat</div>
+            <button class="prod-btn" onclick="teklifAl('Metal Kalem')">Teklif Al</button>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-thumb pt-blue">🍵</div>
+          <div class="prod-info">
+            <div class="prod-name">Termos</div>
+            <div class="prod-min">Min. 50 adet</div>
+            <div class="prod-badge">Toplu Fiyat</div>
+            <button class="prod-btn" onclick="teklifAl('Termos')">Teklif Al</button>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-thumb pt-green">📓</div>
+          <div class="prod-info">
+            <div class="prod-name">Sert Kapak Defter</div>
+            <div class="prod-min">Min. 50 adet</div>
+            <div class="prod-badge">Toplu Fiyat</div>
+            <button class="prod-btn" onclick="teklifAl('Sert Kapak Defter')">Teklif Al</button>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-thumb pt-purple">🔋</div>
+          <div class="prod-info">
+            <div class="prod-name">Powerbank</div>
+            <div class="prod-min">Min. 25 adet</div>
+            <div class="prod-badge">Toplu Fiyat</div>
+            <button class="prod-btn" onclick="teklifAl('Powerbank')">Teklif Al</button>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-thumb pt-yellow">💾</div>
+          <div class="prod-info">
+            <div class="prod-name">USB Bellek</div>
+            <div class="prod-min">Min. 50 adet</div>
+            <div class="prod-badge">Toplu Fiyat</div>
+            <button class="prod-btn" onclick="teklifAl('USB Bellek')">Teklif Al</button>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-thumb pt-red">🔑</div>
+          <div class="prod-info">
+            <div class="prod-name">Anahtarlık</div>
+            <div class="prod-min">Min. 100 adet</div>
+            <div class="prod-badge">Toplu Fiyat</div>
+            <button class="prod-btn" onclick="teklifAl('Anahtarlık')">Teklif Al</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ÖZEL BASKI -->
+      <div id="tab-ozel" class="prod-grid" style="display:none">
+        <div class="prod-card">
+          <div class="prod-thumb pt-blue">🖨️</div>
+          <div class="prod-info">
+            <div class="prod-name">Dijital Baskı</div>
+            <div class="prod-min">Her ürüne uygulanır</div>
+            <div class="prod-badge">Özel Üretim</div>
+            <button class="prod-btn" onclick="teklifAl('Dijital Baskı')">Teklif Al</button>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-thumb pt-green">🧵</div>
+          <div class="prod-info">
+            <div class="prod-name">Nakış Baskı</div>
+            <div class="prod-min">Min. 20 adet</div>
+            <div class="prod-badge">Özel Üretim</div>
+            <button class="prod-btn" onclick="teklifAl('Nakış Baskı')">Teklif Al</button>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-thumb pt-orange">🎨</div>
+          <div class="prod-info">
+            <div class="prod-name">Serigrafi Baskı</div>
+            <div class="prod-min">Min. 50 adet</div>
+            <div class="prod-badge">Özel Üretim</div>
+            <button class="prod-btn" onclick="teklifAl('Serigrafi Baskı')">Teklif Al</button>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-thumb pt-purple">✂️</div>
+          <div class="prod-info">
+            <div class="prod-name">Lazer Kazıma</div>
+            <div class="prod-min">Min. 10 adet</div>
+            <div class="prod-badge">Özel Üretim</div>
+            <button class="prod-btn" onclick="teklifAl('Lazer Kazıma')">Teklif Al</button>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-thumb pt-yellow">📦</div>
+          <div class="prod-info">
+            <div class="prod-name">Özel Ambalaj</div>
+            <div class="prod-min">Min. 50 adet</div>
+            <div class="prod-badge">Özel Üretim</div>
+            <button class="prod-btn" onclick="teklifAl('Özel Ambalaj')">Teklif Al</button>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-thumb pt-red">🏷️</div>
+          <div class="prod-info">
+            <div class="prod-name">Etiket & Bant</div>
+            <div class="prod-min">Min. 500 adet</div>
+            <div class="prod-badge">Özel Üretim</div>
+            <button class="prod-btn" onclick="teklifAl('Etiket & Bant')">Teklif Al</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="modal-foot">
+      <span><i class="ti ti-info-circle" style="vertical-align:-2px;margin-right:4px" aria-hidden="true"></i>Fiyatlar adet ve ürüne göre değişir</span>
+      <button class="modal-foot-btn" onclick="teklifAl('tüm ürünler için toplu sipariş')">Toplu Teklif İste</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function openKatalog(tab) {
+  document.getElementById('katalogModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  if (tab) switchTab(tab);
+}
+function closeKatalog() {
+  document.getElementById('katalogModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function switchTab(id) {
+  ['tekstil','promosyon','ozel'].forEach(function(t) {
+    document.getElementById('tab-' + t).style.display = t === id ? 'grid' : 'none';
+    var btn = document.getElementById('tab-btn-' + t);
+    if (btn) btn.classList.toggle('active', t === id);
+  });
+}
+function teklifAl(urun) {
+  closeKatalog();
+  var sel = document.querySelector('select[name="category"]');
+  if (urun.includes('Tişört') || urun.includes('Gömlek') || urun.includes('Sweatshirt') || urun.includes('Çanta') || urun.includes('Şapka')) {
+    if (sel) sel.value = 'tekstil';
+  } else if (urun.includes('Baskı') || urun.includes('Nakış') || urun.includes('Lazer') || urun.includes('Ambalaj') || urun.includes('Etiket')) {
+    if (sel) sel.value = 'ozel';
+  } else {
+    if (sel) sel.value = 'promosyon';
+  }
+  var msg = document.querySelector('textarea[name="message"]');
+  if (msg) msg.value = urun + ' için fiyat teklifi almak istiyorum.';
+  document.getElementById('teklif').scrollIntoView({behavior:'smooth'});
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeKatalog();
+});
+</script>
+
 </body>
-</html>
+</html> 
